@@ -1,4 +1,5 @@
 import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 import * as React from "react";
 
 import { Button } from "../src/components/Button";
@@ -65,16 +66,12 @@ storiesOf("Button", module)
   ))
   .add("Actions", () => (
     <div>
-      <Button
-        onClick={() => console.log("Clicked!")}
-        color="#E50914"
-        textColor="#fff"
-      >
+      <Button onClick={action("Clicked!")} color="#E50914" textColor="#fff">
         Login
       </Button>
       <Button
         disabled
-        onClick={() => console.log("Clicked!")}
+        onClick={action("Clicked!")}
         color="#E50914"
         textColor="#fff"
       >
