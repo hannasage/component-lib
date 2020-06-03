@@ -1,6 +1,7 @@
 import React from "react";
 import { configure, addParameters, addDecorator } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
+import "../src/styles.css";
 
 addDecorator(withInfo);
 
