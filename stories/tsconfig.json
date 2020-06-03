@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [".", "../types"],
+  "compilerOptions": {
+    "declaration": false,
+    "baseUrl": "../",
+    "paths": {
+      "@kevinhaube/comp-lib": ["../src"]
+    }
+  }
+}
