@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { borderRadius, Shape, TextStyle, padding, Size } from "./interfaces";
 
 export interface Props {
   /**
@@ -11,30 +12,78 @@ export interface Props {
    */
   className?: string;
   /**
+   * RGB, RGBA, or Hex value to apply as the color of the button
+   */
+  color?: string;
+  /**
+   * RGB, RGBA, or Hex value to apply as the text color
+   */
+  textColor?: string;
+  /**
    * Whether or not the button is disabled
    * @default false
    */
   disabled?: boolean;
+  /**
+   * Whether or not the button is filled in
+   * @default true
+   */
+  filled?: boolean;
+  /**
+   * OnClick functionality of the button
+   */
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  /**
+   * The shape of the button
+   * @default 'rounded'
+   */
+  shape?: Shape;
+  /**
+   * Indicates the size of the button (changed by CSS padding)
+   * @default 'large'
+   */
+  size?: Size;
+  /**
+   * Inline styling with CSS
+   */
+  style?: React.CSSProperties;
+  /**
+   * Whether the text is as-typed, capitalized, lowercase, or uppercase
+   * @default undefined
+   */
+  textStyle?: TextStyle;
 }
 
 const Button = (props: Props) => {
-  const { children, className, disabled } = props;
+  const {
+    children,
+    className,
+    color,
+    disabled,
+    filled,
+    onClick,
+    shape,
+    size,
+    style,
+    textColor,
+    textStyle,
+  } = props;
 
   const FilledButton = styled.button`
     /* Shape Styling */
     border: none;
-    border-radius: 5px;
-    padding: 1rem 1.3rem;
+    border-radius: ${borderRadius(shape)}px;
+    padding: ${padding(size)};
     margin: 1rem;
 
     /* Color & Font */
     font-family: inherit;
-    background: #000;
-    color: #fff;
+    background: ${color};
+    color: ${textColor};
     font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: ${textStyle};
     white-space: nowrap;
 
     transition: 150ms;
@@ -50,13 +99,39 @@ const Button = (props: Props) => {
     }
   `;
 
+  const OutlinedButton = styled(FilledButton)`
+    padding: calc(1rem - 2px) calc(2rem - 2px);
+    background: rgba(250, 250, 250, 0);
+    border: 2px solid ${color};
+  `;
+
   return (
-    <FilledButton className={className} disabled={disabled}>
-      {children}
-    </FilledButton>
+    <>
+      {!filled ? (
+        <OutlinedButton
+          className={className}
+          style={style}
+          disabled={disabled}
+          onClick={onClick}
+        >
+          {children}
+        </OutlinedButton>
+      ) : (
+        <FilledButton
+          className={className}
+          style={style}
+          disabled={disabled}
+          onClick={onClick}
+        >
+          {children}
+        </FilledButton>
+      )}
+    </>
   );
 };
 
-Button.defaultProps = {};
+Button.defaultProps = {
+  filled: true,
+};
 
 export { Button };
