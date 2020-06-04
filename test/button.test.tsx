@@ -2,11 +2,7 @@ import { shallow } from "enzyme";
 import * as React from "react";
 import "jest-styled-components";
 import * as sinon from "sinon";
-import {
-  Button,
-  FilledButton,
-  OutlinedButton,
-} from "../src/components/Button/Button";
+import { Button, FilledButton, OutlinedButton } from "../src";
 
 describe("Button", () => {
   it("renders filled without crashing, and by default", () => {
