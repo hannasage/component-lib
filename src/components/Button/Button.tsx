@@ -54,6 +54,42 @@ export interface Props {
   textStyle?: TextStyle;
 }
 
+const FilledButton = styled.button`
+  /* Shape Styling */
+  border: none;
+  border-radius: ${(props: Props) => borderRadius(props.shape)}px;
+  padding: ${(props: Props) => padding(props.size)};
+  margin: 1rem;
+
+  /* Color & Font */
+  font-family: inherit;
+  background: ${(props: Props) => props.color};
+  color: ${(props: Props) => props.textColor};
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: ${(props: Props) => props.textStyle};
+  white-space: nowrap;
+
+  transition: 150ms;
+
+  &:hover:enabled {
+    cursor: pointer;
+    transform: translate(0px, -2px);
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+`;
+
+const OutlinedButton = styled(FilledButton)`
+  padding: calc(1rem - 2px) calc(2rem - 2px);
+  background: rgba(250, 250, 250, 0);
+  border: 2px solid ${(props: Props) => props.color};
+`;
+
 const Button = (props: Props) => {
   const {
     children,
@@ -69,42 +105,6 @@ const Button = (props: Props) => {
     textStyle,
   } = props;
 
-  const FilledButton = styled.button`
-    /* Shape Styling */
-    border: none;
-    border-radius: ${borderRadius(shape)}px;
-    padding: ${padding(size)};
-    margin: 1rem;
-
-    /* Color & Font */
-    font-family: inherit;
-    background: ${color};
-    color: ${textColor};
-    font-size: 1.1em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: ${textStyle};
-    white-space: nowrap;
-
-    transition: 150ms;
-
-    &:hover:enabled {
-      cursor: pointer;
-      transform: translate(0px, -2px);
-      box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
-    }
-
-    &:disabled {
-      opacity: 0.3;
-    }
-  `;
-
-  const OutlinedButton = styled(FilledButton)`
-    padding: calc(1rem - 2px) calc(2rem - 2px);
-    background: rgba(250, 250, 250, 0);
-    border: 2px solid ${color};
-  `;
-
   return (
     <>
       {!filled ? (
@@ -112,6 +112,11 @@ const Button = (props: Props) => {
           className={className}
           style={style}
           disabled={disabled}
+          color={color}
+          shape={shape}
+          size={size}
+          textColor={textColor}
+          textStyle={textStyle}
           onClick={onClick}
         >
           {children}
@@ -121,6 +126,11 @@ const Button = (props: Props) => {
           className={className}
           style={style}
           disabled={disabled}
+          color={color}
+          shape={shape}
+          size={size}
+          textColor={textColor}
+          textStyle={textStyle}
           onClick={onClick}
         >
           {children}
@@ -134,4 +144,4 @@ Button.defaultProps = {
   filled: true,
 };
 
-export { Button };
+export { Button, FilledButton, OutlinedButton };
