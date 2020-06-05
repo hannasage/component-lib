@@ -4,6 +4,7 @@
   "description": "A bespoke component library built on TypeScript by and for the Kem1zt",
   "main": "index.tsx",
   "scripts": {
+    "define-css": "tcm src",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook"
@@ -62,9 +63,11 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@material-ui/styles": "^4.10.0",
     "commitizen": "^4.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-jss": "^10.2.0",
     "styled-components": "^5.1.1",
     "typescript": "^3.9.3"
   },

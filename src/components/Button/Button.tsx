@@ -1,8 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { borderRadius, Shape, TextStyle, padding, Size } from "./interfaces";
-
-export interface Props {
+interface Props {
   /**
    * Child element to be rendered
    */
