@@ -25,4 +25,14 @@ describe("Typography", () => {
     const wrapper = shallow(<Typography styleAs="h1" />);
     expect(wrapper.find("p").prop("className")).toBe("makeStyles-h1-1");
   });
+
+  it("can be styled with className and style props", () => {
+    const cnWrapper = shallow(<Typography className="test-class" />);
+    const sWrapper = shallow(<Typography style={{ color: "red" }} />);
+    expect(cnWrapper.find("p").prop("className")).toBe("test-class");
+    expect(sWrapper.find("p").get(0).props.style).toHaveProperty(
+      "color",
+      "red"
+    );
+  });
 });

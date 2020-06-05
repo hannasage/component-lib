@@ -11,6 +11,7 @@ export type StyleOptions =
   | "display2";
 
 export type VariantType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+export type CaseType = "uppercase" | "lowercase" | "capitalize";
 
 export const styleDef = (styleAs: StyleOptions | undefined) => {
   const classes = useStyles();
