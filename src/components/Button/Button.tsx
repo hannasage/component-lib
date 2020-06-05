@@ -72,7 +72,7 @@ const FilledButton = styled.button`
 
   transition: 150ms;
 
-  &:hover:enabled {
+  &:hover:enabled:active {
     cursor: pointer;
     transform: translate(0px, -2px);
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
