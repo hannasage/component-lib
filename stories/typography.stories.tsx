@@ -14,6 +14,8 @@ storiesOf("Typography", module)
   ))
   .add("Button", () => (
     <div>
+      <Typography styleAs="display1">Display 1</Typography>
+      <Typography styleAs="display2">Display 2</Typography>
       <Typography variant="h1">h1 Heading</Typography>
       <Typography variant="h2">h2 Heading</Typography>
       <Typography variant="h3">h3 Heading</Typography>
