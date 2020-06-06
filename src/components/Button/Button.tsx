@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { borderRadius, Shape, TextStyle, padding, Size } from "./interfaces";
+import { LightenDarkenColor } from "../../helpers/LigtenOrDarken.js";
 interface Props {
   /**
    * Child element to be rendered
@@ -70,12 +71,24 @@ const FilledButton = styled.button`
   text-transform: ${(props: Props) => props.textStyle};
   white-space: nowrap;
 
-  transition: 150ms;
+  background-position: center;
+  transition: background 0.8s;
 
-  &:hover:enabled:active {
+  &:hover:enabled {
     cursor: pointer;
-    transform: translate(0px, -2px);
-    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+    background: ${(props: Props) => LightenDarkenColor(props.color, -20)}
+      radial-gradient(
+        circle,
+        transparent 1%,
+        ${(props: Props) => LightenDarkenColor(props.color, -20)} 1%
+      )
+      center/15000%;
+  }
+
+  &:active:enabled {
+    background-color: ${(props: Props) => props.color};
+    background-size: 100%;
+    transition: background 0s;
   }
 
   &:disabled {
@@ -141,6 +154,7 @@ const Button = (props: Props) => {
 
 Button.defaultProps = {
   filled: true,
+  color: "#dee8f7",
 };
 
 export { Button, FilledButton, OutlinedButton };

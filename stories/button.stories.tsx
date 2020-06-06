@@ -26,43 +26,35 @@ storiesOf("Button", module)
       <Button shape={"squared"}>Squared</Button>
     </div>
   ))
-  .add("Colors", () => (
-    <div>
-      <Button textColor="rgb(250, 250, 250)" color="rgb(29, 161, 242)">
-        Tweet
-      </Button>
-      <Button disabled textColor="rgb(250, 250, 250)" color="rgb(29, 161, 242)">
-        Tweet
-      </Button>
-    </div>
-  ))
   .add("Sizes", () => (
     <>
       <div>
-        <Button color="#000" textColor="#fff">
-          Large
-        </Button>
-        <Button color="#000" textColor="#fff" size="small">
+        <Button>Large</Button>
+        <Button size="small">Small</Button>
+      </div>
+      <div>
+        <Button shape="squared">Large</Button>
+        <Button shape="squared" size="small">
           Small
         </Button>
       </div>
       <div>
-        <Button shape="squared" color="#000" textColor="#fff">
-          Large
-        </Button>
-        <Button shape="squared" color="#000" textColor="#fff" size="small">
-          Small
-        </Button>
-      </div>
-      <div>
-        <Button shape="pill" color="#000" textColor="#fff">
-          Large
-        </Button>
-        <Button shape="pill" color="#000" textColor="#fff" size="small">
+        <Button shape="pill">Large</Button>
+        <Button shape="pill" size="small">
           Small
         </Button>
       </div>
     </>
+  ))
+  .add("Colors", () => (
+    <div>
+      <Button color="#d68c42" textColor="#fff">
+        Color
+      </Button>
+      <Button disabled color="#d68c42" textColor="#fff">
+        Color
+      </Button>
+    </div>
   ))
   .add("Actions", () => (
     <div>
