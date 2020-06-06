@@ -19,6 +19,16 @@ storiesOf("Button", module)
       <Button disabled>Disabled</Button>
     </div>
   ))
+  .add("Styles", () => (
+    <div>
+      <Button size="small" filled={false}>
+        Unfilled
+      </Button>
+      <Button size="small" shape="pill" filled={false}>
+        Pill Unfilled
+      </Button>
+    </div>
+  ))
   .add("Shapes", () => (
     <div>
       <Button shape={"pill"}>Pill Shape</Button>

@@ -97,9 +97,28 @@ const FilledButton = styled.button`
 `;
 
 const OutlinedButton = styled(FilledButton)`
-  padding: calc(1rem - 2px) calc(2rem - 2px);
-  background: rgba(250, 250, 250, 0);
-  border: 2px solid ${(props: Props) => props.color};
+  padding: ${(props: Props) => padding(props.size)};
+  background: rgba(0, 0, 0, 0);
+
+  background-position: center;
+  transition: background 0.8s;
+
+  &:hover:enabled {
+    cursor: pointer;
+    background: rgba(0, 0, 0, .1);
+      radial-gradient(
+        circle,
+        transparent 1%,
+        ${LightenDarkenColor("#ffffff", -20)} 1%
+      )
+      center/15000%;
+  }
+
+  &:active:enabled {
+    background-color: ${(props: Props) => props.color};
+    background-size: 100%;
+    transition: background 0s;
+  }
 `;
 
 const Button = (props: Props) => {
