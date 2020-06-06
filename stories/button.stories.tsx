@@ -19,7 +19,7 @@ storiesOf("Button", module)
       <Button disabled>Disabled</Button>
     </div>
   ))
-  .add("Styles", () => (
+  .add("Styles (beta)", () => (
     <div>
       <Button size="small" filled={false}>
         Unfilled

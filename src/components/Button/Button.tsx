@@ -105,7 +105,7 @@ const OutlinedButton = styled(FilledButton)`
 
   &:hover:enabled {
     cursor: pointer;
-    background: rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, 0);
       radial-gradient(
         circle,
         transparent 1%,
