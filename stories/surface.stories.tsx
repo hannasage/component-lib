@@ -42,4 +42,23 @@ storiesOf("Surface", module)
         }}
       ></Surface>
     </div>
+  ))
+  .add("Size", () => (
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "row",
+      }}
+    >
+      <Surface size={["200px", "150px"]}></Surface>
+      <Surface darkMode size={["10rem", "16rem"]}></Surface>
+      <Surface
+        darkMode
+        size={["100%", "16rem"]}
+        style={{ maxWidth: "200px" }}
+      ></Surface>
+    </div>
   ));
