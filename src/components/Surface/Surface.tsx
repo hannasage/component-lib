@@ -4,9 +4,13 @@ import { CSSProperties } from "@material-ui/styles";
 
 interface Props {
   /**
+   * Custom class styling through CSS
+   */
+  className?: string;
+  /**
    * Uses defaultDark class from predefined styles.
    */
-  defaultDark?: boolean;
+  darkMode?: boolean;
   /**
    * Inline CSS styling
    */
@@ -15,10 +19,13 @@ interface Props {
 
 const Surface = (props: Props) => {
   const styles = useStyles();
+  const { className, darkMode, style } = props;
   return (
     <div
-      className={props.defaultDark ? styles.defaultDark : styles.default}
-      style={props.style}
+      className={
+        darkMode ? styles.defaultDark : className ? className : styles.default
+      }
+      style={style}
     ></div>
   );
 };
