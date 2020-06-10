@@ -12,6 +12,11 @@ export interface Props {
    */
   darkMode?: boolean;
   /**
+   * Simulated elevation level of the Surface, changes
+   * box-shadow styling
+   */
+  elevation?: number;
+  /**
    * Takes propery as ["width", "height"]. Be sure to include units
    * such as px, rem, or %.
    *
@@ -42,6 +47,10 @@ const Surface = (props: Props) => {
       {children}
     </div>
   );
+};
+
+Surface.defaultProps = {
+  //   elevation: 2,
 };
 
 export { Surface };

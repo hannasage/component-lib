@@ -10,6 +10,7 @@ const ExampleOne = () => {
 
   return (
     <Surface
+      elevation={2}
       size={isSmall || isMedium ? ["100%", "auto"] : ["33%", "auto"]}
       style={{ maxWidth: "700px", padding: "1rem" }}
     >
@@ -122,6 +123,22 @@ storiesOf("Surface", module)
         size={["100%", "16rem"]}
         style={{ maxWidth: "200px" }}
       ></Surface>
+    </div>
+  ))
+  .add("Elevation", () => (
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "row",
+      }}
+    >
+      <Surface elevation={1} size={["200px", "200px"]}></Surface>
+      <Surface size={["200px", "200px"]}></Surface>
+      <Surface elevation={4} size={["200px", "200px"]}></Surface>
     </div>
   ))
   .add("Examples", () => (
