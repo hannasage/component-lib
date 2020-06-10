@@ -7,11 +7,14 @@ import { Surface, Typography, Button } from "../src";
 const ExampleOne = () => {
   const isSmall = useMediaQuery("(max-width: 640px");
   const isMedium = useMediaQuery("(max-width: 840px");
+  const isMobile = useMediaQuery("only screen and (max-width: 840)");
 
   return (
     <Surface
       elevation={2}
-      size={isSmall || isMedium ? ["100%", "auto"] : ["33%", "auto"]}
+      size={
+        isSmall || isMedium || isMobile ? ["100%", "auto"] : ["50%", "auto"]
+      }
       style={{ maxWidth: "700px", padding: "1rem" }}
     >
       <Typography variant="h3">Title</Typography>
@@ -145,9 +148,8 @@ storiesOf("Surface", module)
     <div
       style={{
         width: "100%",
-        display: "-webkit-flex",
+        display: "flex",
         flexWrap: "wrap",
-        WebkitFlexWrap: "wrap",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
