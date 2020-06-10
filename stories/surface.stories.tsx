@@ -145,7 +145,7 @@ storiesOf("Surface", module)
     <div
       style={{
         width: "100%",
-        display: "flex",
+        display: "-webkit-flex",
         flexWrap: "wrap",
         WebkitFlexWrap: "wrap",
         justifyContent: "center",
