@@ -35,11 +35,9 @@ const ExampleTwo = () => {
   return (
     <Surface
       size={isSmall ? ["100%", "auto"] : ["33%", "auto"]}
+      darkMode
       style={{
-        color: "white",
-        maxWidth: "700px",
         padding: "1rem",
-        backgroundColor: "#1EA7FD",
         boxShadow: "-4px 4px 10px 4px rgba(0,0,0,0.2)",
       }}
     >
@@ -55,7 +53,7 @@ const ExampleTwo = () => {
           marginTop: "1rem",
         }}
       >
-        <Button style={{ margin: 0 }} color="#f7f7f7" textColor="#1EA7FD">
+        <Button style={{ margin: 0 }} color="#f7f7f7" textColor="#26333f">
           Confirm
         </Button>
       </div>

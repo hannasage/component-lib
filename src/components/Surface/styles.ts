@@ -21,6 +21,7 @@ const useStyles = makeStyles({
     padding: ".5rem",
     background: "#26333f",
     borderRadius: "8px",
+    color: "#fff",
     width: props.size ? props.size[0] : "200px",
     height: props.size ? props.size[1] : "200px",
     boxShadow: !props.elevation
