@@ -5,16 +5,14 @@ import { useMediaQuery } from "../src/hooks";
 import { Surface, Typography, Button } from "../src";
 
 const ExampleOne = () => {
-  const isSmall = useMediaQuery("(max-width: 640px");
-  const isMedium = useMediaQuery("(max-width: 840px");
-  const isMobile = useMediaQuery("only screen and (max-width: 840)");
+  const isSmall = useMediaQuery("(max-width: 640px)");
+  //   const isMedium = useMediaQuery("(max-width: 840px)");
+  //   const isMobile = useMediaQuery("only screen and (max-width: 840)");
 
   return (
     <Surface
       elevation={2}
-      size={
-        isSmall || isMedium || isMobile ? ["100%", "auto"] : ["50%", "auto"]
-      }
+      size={isSmall ? ["100%", "auto"] : ["50%", "auto"]}
       style={{ maxWidth: "700px", padding: "1rem" }}
     >
       <Typography variant="h3">Title</Typography>
@@ -32,12 +30,11 @@ const ExampleOne = () => {
 };
 
 const ExampleTwo = () => {
-  const isSmall = useMediaQuery("(max-width: 640px");
-  const isMedium = useMediaQuery("(max-width: 840px");
+  const isSmall = useMediaQuery("(max-width: 640px)");
 
   return (
     <Surface
-      size={isSmall || isMedium ? ["100%", "auto"] : ["33%", "auto"]}
+      size={isSmall ? ["100%", "auto"] : ["33%", "auto"]}
       style={{
         color: "white",
         maxWidth: "700px",
