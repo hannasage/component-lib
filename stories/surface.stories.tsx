@@ -147,6 +147,7 @@ storiesOf("Surface", module)
         width: "100%",
         display: "flex",
         flexWrap: "wrap",
+        WebkitFlexWrap: "wrap",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
