@@ -13,6 +13,6 @@ describe("Surface", () => {
   it("Applies Dark Mode default styling through darkMode property", () => {
     const wrapper = shallow(<Surface darkMode={true} />);
     const element = wrapper.find(HTMLDivElement);
-    expect(element.prop("darkMode")).toBe(true);
+    expect(element.prop("darkMode")).toBeTruthy;
   });
 });
