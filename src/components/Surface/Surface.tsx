@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useStyles } from "components/Surface/styles";
+import { useStyles } from "./styles";
 import { CSSProperties } from "@material-ui/styles";
 
 export interface Props {
